@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <style>
+         table, th, td {
+  border:1px solid black;
+}
+      </style>
+   </head>
+   <body>
+
+    <h3> Image metadata</h3>
+      <form action = "/" method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "file" /><br>
+         <input type = "submit"/>
+      </form>
+
+      {% if metadataLis %}
+       <table >
+         {% for value in metadataLis %}
+         <tr>
+           <td>{{value[0]}}</td>
+           <td>{{value[1]}}</td>
+         </tr>
+         {% endfor %}
+       </table>
+      {% endif %}
+   </body>
+</html>
